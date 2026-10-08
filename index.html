@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varshitha Reddy Kancharla | AI/ML & Backend Engineer</title>
+<meta name="description" content="Varshitha Reddy Kancharla: AI/ML and backend engineer building end-to-end Python systems, from model training to APIs and UIs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5c5f66;
+    --line: #e6e6e3;
+    --accent: #3a5bd9;
+    --accent-soft: #eef1fc;
+    --tag-bg: #f2f2ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111214;
+      --surface: #18191c;
+      --text: #ececec;
+      --muted: #a0a3aa;
+      --line: #2a2c30;
+      --accent: #8aa2ff;
+      --accent-soft: #1c2140;
+      --tag-bg: #222428;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav .name { font-weight: 600; color: var(--text); }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  nav ul a { color: var(--muted); }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+
+  header { padding: 88px 0 64px; }
+  .eyebrow { font: 500 13px/1 "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .02em; }
+  h1 { font-size: clamp(34px, 6vw, 48px); line-height: 1.1; margin: 14px 0 18px; letter-spacing: -0.02em; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 8px; font-weight: 500; font-size: 15px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  }
+  .btn:hover { border-color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #111214; } }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; font-family: "JetBrains Mono", monospace; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 28px; }
+
+  .projects { display: grid; gap: 18px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px;
+  }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .card h3 { margin: 0; font-size: 19px; letter-spacing: -0.01em; }
+  .card .links { font-size: 14px; display: flex; gap: 14px; }
+  .card .sub { color: var(--muted); margin: 6px 0 16px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; padding: 0; list-style: none; }
+  .stats li { background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
+  .stats b { font-weight: 600; }
+  .card ul.points { margin: 0 0 16px; padding-left: 18px; }
+  .card ul.points li { margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font: 500 12px/1 "JetBrains Mono", monospace; background: var(--tag-bg); color: var(--muted); padding: 6px 8px; border-radius: 6px; }
+  code { font: 500 13px "JetBrains Mono", monospace; background: var(--tag-bg); padding: 1px 5px; border-radius: 4px; }
+  .note { font-size: 13px; color: var(--muted); margin: 14px 0 0; font-style: italic; }
+
+  .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .row h3 { margin: 0; font-size: 17px; }
+  .when { color: var(--muted); font-size: 14px; }
+  .role-sub { color: var(--muted); margin: 2px 0 12px; font-size: 15px; }
+
+  .skills { display: grid; grid-template-columns: 170px 1fr; gap: 12px 20px; margin: 0; }
+  .skills dt { font-weight: 600; font-size: 15px; }
+  .skills dd { margin: 0; color: var(--muted); font-size: 15px; }
+  @media (max-width: 600px) {
+    .skills { grid-template-columns: 1fr; gap: 2px; }
+    .skills dd { margin-bottom: 12px; }
+    nav ul { gap: 14px; }
+    nav .name { display: none; }
+    header { padding: 56px 0 44px; }
+  }
+
+  .edu-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  footer { padding: 36px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Varshitha Reddy</a>
+    <ul>
+      <li><a href="#open-source">Open source</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <header>
+    <div class="eyebrow">AI/ML &amp; Backend Engineer</div>
+    <h1>Varshitha Reddy Kancharla</h1>
+    <p class="lead">I build end-to-end Python systems, from training models in PyTorch to serving them through APIs and simple interfaces. B.Tech in AI &amp; ML, Anurag University, 2026.</p>
+    <div class="buttons">
+      <a class="btn primary" href="resume.pdf">Resume (PDF)</a>
+      <a class="btn" href="https://github.com/varshreddyy">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/varshitha-reddy-838743285">LinkedIn</a>
+      <a class="btn" href="mailto:varshithareddy.per@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <section id="open-source">
+    <h2>Open source</h2>
+    <article class="card">
+      <div class="card-head">
+        <h3>ODS: Cross-Encoder Reranker Service</h3>
+        <div class="links"><a href="https://github.com/Osmantic/ODS/pull/1794">Pull request #1794</a></div>
+      </div>
+      <p class="sub">A reranking service for ODS, an open-source local AI server. Under review.</p>
+      <ul class="stats">
+        <li><b>6.9k</b> stars on ODS</li>
+        <li><b>6</b> mocked unit tests</li>
+        <li><b>4 / 4</b> review points resolved</li>
+      </ul>
+      <ul class="points">
+        <li>FastAPI <code>/rerank</code> and <code>/health</code> endpoints running a configurable cross-encoder (default BAAI/bge-reranker-base), packaged as a Docker extension.</li>
+        <li>Unit tests mock the model, so they run without downloading it. A GitHub Actions workflow runs them on every PR that touches the service.</li>
+        <li>After maintainer review: aligned Docker and runtime model defaults, made model loading injectable, wired tests into CI and narrowed error handling.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Sentence-Transformers</span><span class="tag">pytest</span><span class="tag">GitHub Actions</span></div>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <article class="card">
+        <div class="card-head">
+          <h3>LawGPT: Legal AI Assistant</h3>
+          <div class="links"><a href="https://github.com/varshreddyy/LAWGPT">Code</a></div>
+        </div>
+        <p class="sub">A RAG research assistant for Indian law, with outcome prediction.</p>
+        <ul class="stats">
+          <li><b>10,200</b> labelled judgments</li>
+          <li><b>3</b> outcome classes</li>
+          <li><b>Local</b> LLM, no data leaves the machine</li>
+        </ul>
+        <ul class="points">
+          <li>Retrieves relevant Supreme Court and High Court judgments with Legal-BERT embeddings in ChromaDB, one result per case.</li>
+          <li>A local LLM (phi3 via Ollama) answers using only the retrieved text, in a fixed structure: principle, reasoning, sections, answer.</li>
+          <li>A Logistic Regression classifier predicts Allowed / Dismissed / Partly Allowed with a confidence score and shows similar past cases.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">ChromaDB</span><span class="tag">Sentence-Transformers</span><span class="tag">Ollama</span><span class="tag">scikit-learn</span><span class="tag">Streamlit</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Blood Group Classification from Fingerprints</h3>
+          <div class="links"><a href="https://github.com/varshreddyy/Blood-Group-Detection">Code</a></div>
+        </div>
+        <p class="sub">A hybrid CNN + graph neural network image classifier.</p>
+        <ul class="stats">
+          <li><b>79.3%</b> test accuracy</li>
+          <li><b>8</b> classes</li>
+          <li><b>1,600</b> held-out images</li>
+        </ul>
+        <ul class="points">
+          <li>EfficientNet-B3 feature maps become a 49-node k-NN graph, classified by a Graph Attention Network.</li>
+          <li>Averages predictions over 7 augmented views of each image at test time.</li>
+          <li>Flask app for predictions from uploaded images or a webcam.</li>
+        </ul>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">PyTorch Geometric</span><span class="tag">EfficientNet</span><span class="tag">GAT</span><span class="tag">Flask</span></div>
+        <p class="note">Research and learning project. There's no established biological link between fingerprints and blood groups, so this isn't for medical use.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Seq2Seq Chatbot from Scratch</h3>
+          <div class="links"><a href="https://github.com/varshreddyy/Pytorch-Powered-Chatbot">Code</a></div>
+        </div>
+        <p class="sub">An encoder-decoder chatbot with attention, built and trained in PyTorch.</p>
+        <ul class="stats">
+          <li><b>84K</b> dialogue pairs</li>
+          <li><b>21.6K</b>-word vocabulary</li>
+          <li><b>50K</b> training iterations</li>
+        </ul>
+        <ul class="points">
+          <li>GRU encoder and a decoder with Luong dot-product attention, trained on the Cornell Movie-Dialogs corpus.</li>
+          <li>Teacher forcing, gradient clipping and checkpointing in a hand-written training loop.</li>
+          <li>Served through a FastAPI endpoint with a React chat interface.</li>
+        </ul>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Seq2Seq</span><span class="tag">Attention</span><span class="tag">FastAPI</span><span class="tag">React</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Music Recommender</h3>
+          <div class="links"><a href="https://github.com/varshreddyy/music-recommender">Code</a></div>
+        </div>
+        <p class="sub">Finds songs with similar lyrics.</p>
+        <ul class="stats">
+          <li><b>57,650</b> songs</li>
+          <li><b>643</b> artists</li>
+          <li><b>Top 5</b> matches per query</li>
+        </ul>
+        <ul class="points">
+          <li>TF-IDF vectors over song lyrics, ranked by cosine similarity and cached in memory after the first request.</li>
+          <li>Django REST Framework API with a Vite frontend, deployed on Render.</li>
+        </ul>
+        <div class="tags"><span class="tag">scikit-learn</span><span class="tag">Django</span><span class="tag">DRF</span><span class="tag">SQLite</span><span class="tag">Vite</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="row">
+      <h3>AI Developer Intern, Nivuna Labs</h3>
+      <span class="when">May 2025 – Sep 2025</span>
+    </div>
+    <p class="role-sub">Mentored by engineers from Volkswagen</p>
+    <ul>
+      <li>Built the seq2seq chatbot and the music recommender above, from data preprocessing through training to a working API and UI.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, JavaScript</dd>
+      <dt>AI / ML</dt><dd>PyTorch, PyTorch Geometric, scikit-learn, Sentence-Transformers, CNNs, GNNs, seq2seq</dd>
+      <dt>LLM &amp; retrieval</dt><dd>RAG, ChromaDB, Legal-BERT embeddings, Ollama</dd>
+      <dt>Backend</dt><dd>FastAPI, Django REST Framework, Flask, REST APIs</dd>
+      <dt>Frontend</dt><dd>React, Vite, Streamlit</dd>
+      <dt>Data &amp; tools</dt><dd>SQLite, Docker, pytest, GitHub Actions, Git, Render</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Education &amp; certifications</h2>
+    <ul class="edu-list">
+      <li>
+        <div class="row"><h3>B.Tech, Artificial Intelligence &amp; Machine Learning</h3><span class="when">2022 – 2026</span></div>
+        <div class="role-sub">Anurag University, Hyderabad · CGPA 7.8</div>
+      </li>
+      <li>
+        <div class="row"><h3>ServiceNow Certified System Administrator &amp; Application Developer</h3><span class="when">Feb 2026</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I'm looking for entry-level AI or backend engineering roles. The best way to reach me is <a href="mailto:varshithareddy.per@gmail.com">varshithareddy.per@gmail.com</a>, or on <a href="https://linkedin.com/in/varshitha-reddy-838743285">LinkedIn</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Varshitha Reddy Kancharla</div>
+</footer>
+
+</body>
+</html>
